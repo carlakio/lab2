@@ -36,13 +36,34 @@
     }
 
     #profile-pic-container {
-      width: 300px; /* Set the width of the profile pic container */
-      height: 300px; /* Set the height of the profile pic container */
+      width: 300px;
+      height: 300px;
       overflow: hidden;
     }
 
     #slideshow-image {
-      transition: opacity 0.5s ease-in-out; /* Add a smooth transition effect */
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Hide additional details by default */
+    #more-details {
+      display: none;
+      margin-top: 10px;
+    }
+
+    /* Style for the "Show More" button */
+    #show-more-btn {
+      background-color: lightblue;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    #show-more-btn:hover {
+      background-color: darkblue;
     }
   </style>
 </head>
@@ -66,6 +87,18 @@
           <li><strong>Age:</strong> 19</li>
           <li><strong>Religion:</strong> Catholic</li>
         </ul>
+        
+        
+        <button id="show-more-btn" onclick="toggleMoreDetails()">Show More</button>
+        
+        
+        <div id="more-details">
+          <ul>
+            <li><strong>Education:</strong> Currently studying Information of Technology at Asia Pacific College</li>
+            <li><strong>Goals:</strong> Graduate, find a passionate job, and bring happiness to family</li>
+			<li><strong>Experience:</strong> Slightly knowledgeable about Python and HTML. Also knows something about Computers specifically specifications about PC building.</li>
+          </ul>
+        </div>
       </td>
     </tr>
     <tr>
@@ -91,21 +124,34 @@
   </table>
 
   <script>
-    var imageSources = ["profilepic.jpg", "basketballpic.jpg", "thirdpic.jpg"]; // Create an array based on pictures.
+    var imageSources = ["profilepic.jpg", "basketballpic.jpg", "thirdpic.jpg"];
     var currentImageIndex = 0;
 
     function updateImage() {
       var image = document.getElementById("slideshow-image");
-      image.style.opacity = 0; // fade out current image
-
+      image.style.opacity = 0;
+      
       setTimeout(function () {
         image.src = imageSources[currentImageIndex];
-        image.style.opacity = 1; // fade in next image
+        image.style.opacity = 1;
         currentImageIndex = (currentImageIndex + 1) % imageSources.length;
-      }, 500); 
+      }, 500);
     }
 
-    setInterval(updateImage, 2000); 
+    function toggleMoreDetails() {
+      var moreDetails = document.getElementById("more-details");
+      var buttonText = document.getElementById("show-more-btn");
+
+      if (moreDetails.style.display === "none") {
+        moreDetails.style.display = "block";
+        buttonText.innerText = "Show Less";
+      } else {
+        moreDetails.style.display = "none";
+        buttonText.innerText = "Show More";
+      }
+    }
+
+    setInterval(updateImage, 2000);
   </script>
 </body>
 </html>
