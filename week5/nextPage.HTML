@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More About Me</title>
+  <!-- Link your CSS styles if needed -->
+</head>
+<body>
+  <!-- Your HTML content -->
+  <ul id="interests-list"></ul>
+  <ul id="skills-list"></ul>
+  <div id="additionalInfo" style="display: none;">
+  <p>This is additional information that gets revealed when the button is clicked.</p>
+</div>
+
+<!-- Add this button inside the body tag of your HTML page -->
+<button id="showMoreButton">Show More Information</button>
+
+  <script>
+    // Define and use your objects and functions here
+    var additionalDetails = {
+      interests: ["Gaming", "Coding", "Traveling"],
+      skills: ["JavaScript", "HTML", "CSS"]
+    };
+
+    console.log("Script executed");
+
+    function displayAdditionalInfo() {
+      // Use DOM manipulation to display additional information on the page
+      var interestsList = document.getElementById("interests-list");
+      if (interestsList) {
+        interestsList.innerHTML = additionalDetails.interests.map(interest => `<li>${interest}</li>`).join('');
+      } else {
+        console.error("interests-list element not found");
+      }
+
+      var skillsList = document.getElementById("skills-list");
+      if (skillsList) {
+        skillsList.innerHTML = additionalDetails.skills.map(skill => `<li>${skill}</li>`).join('');
+      } else {
+        console.error("skills-list element not found");
+      }
+    }
+	
+	document.getElementById("showMoreButton").addEventListener("click", function() {
+  // Get the hidden section element
+  var additionalInfo = document.getElementById("additionalInfo");
+
+  // Toggle the visibility of the hidden section
+  if (additionalInfo) {
+    if (additionalInfo.style.display === "none" || additionalInfo.style.display === "") {
+      additionalInfo.style.display = "block";
+    } else {
+      additionalInfo.style.display = "none";
+    }
+  }
+});
+	
+	
+
+    // Call the function when the page loads
+    window.onload = displayAdditionalInfo;
+  </script>
+</body>
+</html>
