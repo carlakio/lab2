@@ -90,6 +90,8 @@
         
         
         <button id="show-more-btn" onclick="toggleMoreDetails()">Show More</button>
+		<button onclick="goToNextPage()">Go to Next Page</button>
+		
         
         
         <div id="more-details">
@@ -150,8 +152,14 @@
         buttonText.innerText = "Show More";
       }
     }
+	function goToNextPage() {
+    // Change the URL to the path of your blank HTML page
+    window.location.href = "nextPage.html";
+  }
 
     setInterval(updateImage, 2000);
+	
+	
   </script>
 </body>
 </html>
