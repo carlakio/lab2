@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Akio-kun</title>
+  <title>Hi I'm Carl</title>
   <link rel="icon" href="killuaicon.jpg" type="jpg/killuaicon.jpg">
   <style>
     body {
@@ -154,7 +154,7 @@
     }
 	function goToNextPage() {
     // Change the URL to the path of your blank HTML page
-    window.location.href = "nextPage.html";
+    window.location.href = "nextPage.php";
   }
 
     setInterval(updateImage, 2000);
