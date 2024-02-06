@@ -96,10 +96,16 @@
   </div>
   
   <?php
+//$servername = "localhost";
+//$username = "root";
+//$password = "";
+//$dbname = "myDB";
+
+//for Socitcloud
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "myDB";
+$username = "webprogmi221";
+$password = "g_6bCitLu.ljMK*m";
+$dbname = "webprogmi221";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -108,7 +114,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO MyGuests (name, email, website, comment, gender)
+$sql = "INSERT INTO cpagot_MyGuests (name, email, website, comment, gender)
 VALUES ('$name', '$email', '$website', '$comment', '$gender')";
 
 if (mysqli_query($conn, $sql)) {
@@ -119,6 +125,8 @@ if (mysqli_query($conn, $sql)) {
 
 mysqli_close($conn);
 ?>
+
+  
 
 
 
