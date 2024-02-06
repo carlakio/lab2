@@ -114,7 +114,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO cpagot_MyGuests (name, email, website, comment, gender)
+$sql = "INSERT INTO cpagot_myguests (name, email, website, comment, gender)
 VALUES ('$name', '$email', '$website', '$comment', '$gender')";
 
 if (mysqli_query($conn, $sql)) {
